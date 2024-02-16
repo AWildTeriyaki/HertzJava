@@ -64,13 +64,13 @@ public class Swerve extends SubsystemBase {
 
     //Path Planner - AutoBuilder
     AutoBuilder.configureHolonomic(
-       this::getPose,
+      this::getPose,
       this::resetOdometry,
       this::getSpeed,
       this::driveRobotRelative,
       new HolonomicPathFollowerConfig(
-        new PIDConstants(1, 0.0, 0.0),
-        new PIDConstants(2, 0.0, 0.0),
+        new PIDConstants(0.01, 0, 0.0),
+        new PIDConstants(2, 0, 0.0),
         2,
         0.8,
         new ReplanningConfig()
